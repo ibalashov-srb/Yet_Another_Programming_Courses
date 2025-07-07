@@ -3,36 +3,67 @@ import 'dart:math';
 
 void main() {
   // a*x^2 + b*x + c = 0
-  print("Enter A coefficient:");
-  String? a = stdin.readLineSync(); 
+  print("Enter A coefficient:"); // Выводит в консоль текст 
+  String? a = stdin.readLineSync(); // Считывает ввод пользователя в переменную a
 
-  print("Enter B coefficient:");
-  String? b = stdin.readLineSync(); 
+  print("Enter B coefficient:"); // Выводит в консоль текст
+  String? b = stdin.readLineSync(); // Считывает ввод пользователя в переменную b
 
-  print("Enter C coefficient:");
-  String? c = stdin.readLineSync(); 
-
-  var A = double.tryParse(a ?? '');
+  print("Enter C coefficient:"); // Выводит в консоль текст
+  String? c = stdin.readLineSync(); // Считывает ввод пользователя в переменную c
+  /**
+   * Ниже 3 одинаковых вызова функции .tryParse() у объекта double.
+   * Функция .tryParse() пытается преобразовать строку в число с плавающей запятой.
+   * Если преобразование не удалось, возвращает null.
+   */
+  var A = double.tryParse(a ?? ''); 
   var B = double.tryParse(b ?? '');
   var C = double.tryParse(c ?? '');
 
+  /**
+   * Это мы еще не проходили но это условие читается так:
+   * Если A или B или C равны null, то выводим сообщение об ошибке
+   * потому что мы не сможем решить уравнение с некорректными коэффициентами.
+   */
   if (A == null || B == null || C == null) {
     print("Invalid input. Please enter valid numbers.");
     return;
   }
 
+  // Выводим в консоль уравнение в формате "A * x^2 + B * x + C = 0"
   print("$A * x^2 + $B * x + $C = 0");
 
+  // Вычисляем дискриминант по формуле B^2 - 4 * A * C
   var discriminant = B * B - 4 * A * C;
+
+  /**
+   * Проверяем дискриминант:
+   * - Если дискриминант меньше 0, то уравнение не имеет действ
+   * корней, выводим сообщение об этом.
+   * - Если дискриминант равен 0, то уравнение имеет один
+   * действительный корень, который вычисляем по формуле -B / (2 * A).
+   * - Если дискриминант больше 0, то уравнение имеет два действ
+   * корня, которые вычисляем по формулам (-B + sqrt(discriminant)) / (2 * A)
+   * и (-B - sqrt(discriminant)) / (2 * A).
+   */
   if (discriminant < 0) { 
+    // Выводим сообщение о том, что нет действительных корней
     print("No real roots.");
   } else if (discriminant == 0) {
+    // Вычисляем один действительный корень
     var root = -B / (2 * A);
+    // Выводим сообщение с найденным корнем
     print("One real root: $root");
   } else {
+    /**
+     * Если дискриминант больше 0, то уравнение имеет два действительных корня.
+     * sqrt(discriminant) - это квадратный корень из дискриминанта,
+     * 
+     */
     var root1 = (-B + sqrt(discriminant)) / (2 * A);
     var root2 = (-B - sqrt(discriminant)) / (2 * A);
+    // Выводим сообщение с найденными корнями
     print("Two real roots: $root1 and $root2");
   }
-  print("Thank you for using the quadratic equation solver!");
+  // Конец программы
 }
