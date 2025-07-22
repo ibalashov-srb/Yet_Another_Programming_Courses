@@ -1,3 +1,9 @@
+/**
+ * Проверка логина
+ * Создай Map<String, String> с парами логин: пароль.
+ * Напиши функцию isValid(String login, String password), которая проверяет, что логин существует и пароль совпадает.
+ */
+
 void main() {
   Map<String, String> accounts = {
     'alice': '1234',

@@ -1,3 +1,10 @@
+/**
+ * Количество голосов
+ * У тебя есть список голосов:
+ * List<String> votes = ['Alice', 'Bob', 'Alice', 'Charlie', 'Alice', 'Bob'];
+ * Создай Map<String, int>, где ключ — имя кандидата, а значение — сколько раз за него проголосовали.
+ */
+
 void main() {
   List<String> votes = ['Alice', 'Bob', 'Alice', 'Charlie', 'Alice', 'Bob'];
 

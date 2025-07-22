@@ -1,3 +1,10 @@
+/**
+ * Магазин покупок
+ * У тебя есть два Map:
+ * Map<String, int> prices = {'яблоко': 30, 'хлеб': 40};
+ * Map<String, int> cart = {'яблоко': 2, 'хлеб': 1};
+ * Напиши функцию getTotalPrice(cart, prices) — считает общую сумму покупки.
+ */
 void main() {
   Map<String, int> prices = {'яблоко': 30, 'хлеб': 40, 'молоко': 50};
   Map<String, int> cart = {'яблоко': 2, 'хлеб': 1};
