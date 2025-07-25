@@ -14,7 +14,7 @@ void main() {
 
   Map<String, int> cart2 = {'молоко': 3, 'яблоко': 1};
   print(getTotalPrice(cart2, prices) == 180 ? 'Test 2 Passed' : 'Test 2 Failed');
-
+  
   print(getZdachya(cart, prices, 250));
 }
 
