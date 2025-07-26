@@ -1,3 +1,8 @@
+/**
+ * Используй for (var person in people), чтобы пройтись по всем людям.
+ * Проверь: if (person['job'] == job), тогда добавь person['name'] в результат.
+ * Верни итоговый список.
+ */
 void main() {
   List<Map<String, String>> people = [
     {'name': 'Anna', 'job': 'Designer'},
