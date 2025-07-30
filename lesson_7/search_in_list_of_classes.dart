@@ -18,25 +18,19 @@ void main() {
     robots.add(generateRobot());
   }
 
-  //print(robots);
-
-  print("start findRobotInLoop");
   var result = findRobotInLoop(robots, 12313);
   if (result >= 0) {
     print("Fount - $result");
   } else {
     print("Nothing");
   }
-  print("end findRobotInLoop");
-
-  print("start findRobotBinarySearch");
+  
   var binaryRes = findRobotBinarySearch(robots, 12313);
   if (binaryRes >= 0) {
     print("Fount - $binaryRes");
   } else {
     print("Nothing");
   }
-  print("end findRobotBinarySearch");
 }
 
 Robot generateRobot() {
@@ -47,7 +41,6 @@ Robot generateRobot() {
 }
 
 int findRobotInLoop(List<Robot> robots, int targetSerial) {
-  //robots.sort((a, b) => a.serial.compareTo(b.serial));
   for (int i = 0; i < robots.length; i++) {
     if (robots[i].serial == targetSerial) {
       return i;

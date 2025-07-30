@@ -5,7 +5,6 @@ class Human {
   Human(this.name, this.age);
 }
 
-
 void main() {
   List<Human> people = [];
 
