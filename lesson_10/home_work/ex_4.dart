@@ -7,7 +7,7 @@
 
 // TODO: импортируй 'utils/exports.dart'
 
-void runUtilsTest() {
+void main() {
   // TODO: раскомментируй после реализации
   // int s = sum(3, 7);
   // int m = multiply(4, 5);
