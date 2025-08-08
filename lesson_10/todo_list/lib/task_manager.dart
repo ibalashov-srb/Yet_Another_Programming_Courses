@@ -63,4 +63,8 @@ class TaskManager {
   void storeInProgressTasks(){
     storage.saveInProgessTasks(intProgressTasks);
   }
+
+  void storeFinishedTasks(){
+    storage.saveFinishedTasks(finishedTasks);
+  }
 }

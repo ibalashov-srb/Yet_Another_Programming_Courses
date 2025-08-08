@@ -47,16 +47,26 @@ class TaskStorage {
    * wash cat;false;0
    */
   void saveInProgessTasks(List<Task> tasks) {
+    var content = parseTasks(tasks);
+    File(pathToInProgressTasks).writeAsStringSync(content);
+  }
+
+  void saveFinishedTasks(List<Task> tasks) {
+    var content = parseTasks(tasks);
+    File(pathToFinishedTasks).writeAsStringSync(content);
+  }
+
+  String parseTasks(List<Task> tasks) {
     List<String> stringedTasks= [];
 
     for (var task in tasks) {
       var stringedTask = "${task.shortName};${task.status};${task.priority}";
-
       stringedTasks.add(stringedTask);
     }
 
     var content = stringedTasks.join("\n");
-
-    File(pathToInProgressTasks).writeAsStringSync(content);
+    return content;
   }
+
+
 }
