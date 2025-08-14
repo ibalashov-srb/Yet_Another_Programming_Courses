@@ -12,7 +12,6 @@ b = 5
 {a:4, b: 7, c: 4}
 */
 
-
 Map<String, int> mergeWithSum(List<String> keys, List<int> values) {
   // TODO: создай Map и суммируй значения для повторяющихся ключей
   return {};
